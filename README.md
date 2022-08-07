@@ -21,6 +21,7 @@ Helium Console Side
 
 
 
+------ Everything below is copied from Kicko's https://github.com/hkicko/CubeCell-GPS-Helium-Mapper
 **CubeCell-GPS Helium Mapper** based on https://github.com/jas-williams/CubeCell-Helium-Mapper.git with the following improvements:
 
 - No longer stopping the GPS after each SEND, allowing for faster GPS Fix next time. 
