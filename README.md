@@ -1,7 +1,23 @@
 # Overview
 
-Adds home-assistant integration using GPS Logger
-- Requires write up
+**Adds home-assistant integration using GPS Logger**
+	
+Homeassistant Side
+- This guide assumes that you have already exposed your homeassistant securely to the internet.
+- Start off by going to your homeassistant page > Settings > Device and Services > Add Integration > Type in "GPSLogger" and make note of the webhook URL Generated.
+	
+Helium Console Side
+- It is assumed that you already have your device setup 
+- Under Nodes open up integration and press Add new Integration
+- Select the HTTP integration which allows for sending data to an endpoint, as well as receiving data, over HTTP.
+- Endpoint URL: This will be your URL that was generated from homeassistant
+- Method: Post
+- Put these values in for your HTTP Header options
+- 	Header:```Content-Type``` , Value: ```application/x-www-form-urlencoded```
+- Name and Save your integration and go back into it to open up the advanced option
+- Here you will put the following into the template body and save.
+- Template Body: ```device={{name}}&{{#decoded}}{{#payload}}battery={{battery}}&accuracy={{accuracy}}&altitude={{altitude}}&latitude={{latitude}}&longitude={{longitude}}&speed={{speed}}{{/payload}}{{/decoded}}```
+- Now youre all set and should be able to test out your tracker device and you should see it update on homeassistant.
 
 
 
