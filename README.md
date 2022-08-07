@@ -1,4 +1,10 @@
 # Overview
+
+Adds home-assistant integration using GPS Logger
+- Requires write up
+
+
+
 **CubeCell-GPS Helium Mapper** based on https://github.com/jas-williams/CubeCell-Helium-Mapper.git with the following improvements:
 
 - No longer stopping the GPS after each SEND, allowing for faster GPS Fix next time. 
